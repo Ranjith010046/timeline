@@ -1,0 +1,132 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,9,1) 67%, rgba(0,212,255,1) 100%);
+    animation-name:grad;
+    animation-duration:5s;
+    animation-iteration-count: infinite;
+}
+
+section#timeline{
+    width:80%;
+    position:relative;
+    margin:20px;
+    
+}
+section#timeline1{
+    width:80%;
+    position:relative;
+    margin:20px;
+    animation-name: slideright;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+section#timeline:before{
+    content:"";
+    width:3px;
+    height:100%;
+    background-color: blue;
+    position: absolute;
+    left:50%;
+    animation-name: line;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+section#timeline article{
+    width:100%;
+    margin:0 0 20px 0;
+    position: relative;
+}
+section#timeline article:after{
+    content:"";
+    display:block; 
+    clear:both;
+}
+.inner{
+    float:left;
+    width:40%;
+    border:2px solid green;
+    padding:20px;
+    background-color:red;
+}
+.inner::after{
+    content:"";
+    position:absolute;
+    width: 80px;
+    height:100px;
+    background-color:yellow;
+    left: 40%;
+    top: 25px;
+    rotate:-45deg;
+    z-index:-1
+}
+.inner1{
+    float:right;
+    width:40%;
+    /* position: absolute; */
+    top: 25px;
+    border:2px solid green;
+    padding:20px;
+    background-color:red;
+}
+.inner2{
+    float:left;
+    width:40%;
+    border:2px solid green;
+    padding:20px;
+    background-color:red;
+}
+.inner1::after{
+    content:"";
+    position:absolute;
+    width: 80px;
+    height:100px;
+    background-color:yellow;
+    right: 40%;
+    top: 39px;
+    rotate:-45deg;
+    z-index:-1
+}
+.inner2::after{
+    content:"";
+    position:absolute;
+    width: 80px;
+    height:100px;
+    background-color:yellow;
+    left: 40%;
+    top: 25px;
+    rotate:-45deg;
+    z-index:-1
+}
+@keyframes slideright{
+    from{ transform: translateX(990px);
+
+    }
+}
+@keyframes line{
+    from 0%{
+        height: 0%;
+    }
+    50%{
+        height: 50%;
+    }
+    75%{
+        height: 75%;
+    }
+    100%{
+        height: 100%;
+    }
+}
+@keyframes grad{
+    100%{
+        background:rgb(22, 78, 199);
+        background: linear-gradient( rgb(34,193,195 0deg, rgba(34,193,195,1) 0%, rgba(45,253,160,1) 100%));
+}
+50%{
+
+background: linear-gradient( rgb(238,174,174)(circle, rgba(238,174,174,1) 9%, rgba(148,187,233,1) 100%));
+}
+}
